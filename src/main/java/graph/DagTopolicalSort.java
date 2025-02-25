@@ -1,3 +1,4 @@
+package graph;
 import java.util.*;
 import java.io.*;
 
@@ -113,90 +114,89 @@ Final Output:
 
 
 */
-class Main {
+class DagTopolicalSort {
     public static void main(String[] args) throws IOException {
         int n = 6, m = 7;
         int[][] edges = {
-            {0, 1, 2}, {0, 4, 1}, {4, 5, 4}, {4, 2, 2},
-            {1, 2, 3}, {2, 3, 6}, {5, 3, 1}
+                {0, 1, 2}, {0, 4, 1}, {4, 5, 4}, {4, 2, 2},
+                {1, 2, 3}, {2, 3, 6}, {5, 3, 1}
         };
-        
-        Solution obj = new Solution();
+
+        DagTopolicalSort obj = new DagTopolicalSort();
         int[] res = obj.shortestPath(n, m, edges);
-        
+
         System.out.println(Arrays.toString(res));
     }
-}
 
-class Pair {
-    int first, second;
-    
-    Pair(int first, int second) {
-        this.first = first;
-        this.second = second;
-    }
-}
 
-class DagTopolicalSort {
-    // Function to perform Topological Sorting using DFS
-    private void topoSort(int node, List<List<Pair>> adj, boolean[] visited, Stack<Integer> stack) {
-        visited[node] = true;
-        
-        for (Pair neighbor : adj.get(node)) {
-            if (!visited[neighbor.first]) {
-                topoSort(neighbor.first, adj, visited, stack);
-            }
+    class Pair {
+        int first, second;
+
+        Pair(int first, int second) {
+            this.first = first;
+            this.second = second;
         }
-        
-        stack.push(node);
     }
-    
-    public int[] shortestPath(int N, int M, int[][] edges) {
-        // Create adjacency list representation of the graph
-        List<List<Pair>> adj = new ArrayList<>();
-        for (int i = 0; i < N; i++) {
-            adj.add(new ArrayList<>());
-        }
-        
-        for (int[] edge : edges) {
-            adj.get(edge[0]).add(new Pair(edge[1], edge[2]));
-        }
-        
-        // Perform Topological Sort
-        Stack<Integer> stack = new Stack<>();
-        boolean[] visited = new boolean[N];
-        
-        for (int i = 0; i < N; i++) {
-            if (!visited[i]) {
-                topoSort(i, adj, visited, stack);
+        // Function to perform Topological Sorting using DFS
+        private void topoSort(int node, List<List<Pair>> adj, boolean[] visited, Stack<Integer> stack) {
+            visited[node] = true;
+
+            for (Pair neighbor : adj.get(node)) {
+                if (!visited[neighbor.first]) {
+                    topoSort(neighbor.first, adj, visited, stack);
+                }
             }
+
+            stack.push(node);
         }
-        
-        // Initialize distance array with a large value (Infinity equivalent)
-        int[] dist = new int[N];
-        Arrays.fill(dist, Integer.MAX_VALUE);
-        dist[0] = 0;
-        
-        // Process nodes in topological order
-        while (!stack.isEmpty()) {
-            int node = stack.pop();
-            
-            if (dist[node] != Integer.MAX_VALUE) {
-                for (Pair neighbor : adj.get(node)) {
-                    if (dist[node] + neighbor.second < dist[neighbor.first]) {
-                        dist[neighbor.first] = dist[node] + neighbor.second;
+
+        public int[] shortestPath(int N, int M, int[][] edges) {
+            // Create adjacency list representation of the graph
+            List<List<Pair>> adj = new ArrayList<>();
+            for (int i = 0; i < N; i++) {
+                adj.add(new ArrayList<>());
+            }
+
+            for (int[] edge : edges) {
+                adj.get(edge[0]).add(new Pair(edge[1], edge[2]));
+            }
+
+            // Perform Topological Sort
+            Stack<Integer> stack = new Stack<>();
+            boolean[] visited = new boolean[N];
+
+            for (int i = 0; i < N; i++) {
+                if (!visited[i]) {
+                    topoSort(i, adj, visited, stack);
+                }
+            }
+
+            // Initialize distance array with a large value (Infinity equivalent)
+            int[] dist = new int[N];
+            Arrays.fill(dist, Integer.MAX_VALUE);
+            dist[0] = 0;
+
+            // Process nodes in topological order
+            while (!stack.isEmpty()) {
+                int node = stack.pop();
+
+                if (dist[node] != Integer.MAX_VALUE) {
+                    for (Pair neighbor : adj.get(node)) {
+                        if (dist[node] + neighbor.second < dist[neighbor.first]) {
+                            dist[neighbor.first] = dist[node] + neighbor.second;
+                        }
                     }
                 }
             }
-        }
-        
-        // Convert unreachable distances to -1
-        for (int i = 0; i < N; i++) {
-            if (dist[i] == Integer.MAX_VALUE) {
-                dist[i] = -1;
+
+            // Convert unreachable distances to -1
+            for (int i = 0; i < N; i++) {
+                if (dist[i] == Integer.MAX_VALUE) {
+                    dist[i] = -1;
+                }
             }
+
+            return dist;
         }
-        
-        return dist;
-    }
+
 }
