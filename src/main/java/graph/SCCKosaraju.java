@@ -2,6 +2,39 @@ package graph
 
 import java.util.*;
 
+/*
+Strongly Connected Components (SCC) – Kosaraju’s Algorithm
+
+A Strongly Connected Component (SCC) is a subgraph in which every vertex is reachable from every other vertex.
+
+Logic Behind Kosaraju's Algorithm
+Kosaraju’s algorithm finds SCCs using two Depth First Search (DFS) traversals:
+
+Steps of the Algorithm
+First DFS (Step 1: Compute Finish Order)
+Perform DFS traversal on the original graph.
+Maintain a stack to store nodes in order of their finishing times (i.e., when DFS completes for a node).
+This helps in determining which nodes to process first in the second DFS.
+Transpose the Graph (Step 2: Reverse All Edges)
+Create a transposed graph where all the edges are reversed.
+If there was a directed edge A → B in the original graph, it is changed to B → A in the transposed graph.
+Second DFS (Step 3: Find SCCs)
+Perform DFS on the transposed graph, processing nodes in the order stored in the stack (from Step 1).
+Every new DFS call represents a new SCC, as nodes visited in one DFS belong to the same strongly connected component.
+Time Complexity Analysis
+
+First DFS Traversal: 
+O(V+E)
+Graph Transposition: 
+O(V+E)
+Second DFS Traversal: 
+
+O(V+E)
+Total Complexity: 
+
+O(V+E) (linear time)
+
+*/
 public class SCCKosaraju {
     private int V;
     private List<List<Integer>> adj;
