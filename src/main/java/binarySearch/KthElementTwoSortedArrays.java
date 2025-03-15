@@ -1,3 +1,5 @@
+package binarySearch;
+
 import java.util.*;
 /*
 K-th Element of two sorted arrays
