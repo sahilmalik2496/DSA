@@ -1,4 +1,4 @@
-package greedy
+package greedy;
 
     /*
 Problem Statement: The weight of N items and their corresponding values are given. We have to put these items in a knapsack of weight W such that the total value obtained is maximized.
@@ -16,6 +16,8 @@ Explanation: The first and second items  are taken as a whole  while only 20 uni
 
     
 import java.util.*;
+
+public class FractionalKnapsack {
 
 class Item {
     int value, weight;
@@ -35,8 +37,7 @@ class ItemComparator implements Comparator<Item> {
     }
 }
 
-public class FractionalKnapsack {
-    static double fractionalKnapsack(int capacity, Item[] items) {
+    double fractionalKnapsack(int capacity, Item[] items) {
         Arrays.sort(items, new ItemComparator());
 
         int currentWeight = 0;
@@ -56,7 +57,7 @@ public class FractionalKnapsack {
         return totalValue;
     }
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         Item[] items = {
             new Item(100, 20),
             new Item(60, 10),

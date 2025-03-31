@@ -1,4 +1,4 @@
-package greedy
+package greedy;
 
 /*
 Job Sequencing Problem
@@ -16,6 +16,9 @@ Profit = 40 + 20 = 60
 
 */
 
+import java.util.Arrays;
+
+class JobSequencing {
 class Job {
    int id, profit, deadline;
    Job(int x, int y, int z) {
@@ -25,7 +28,6 @@ class Job {
    }
 }
 
-class JobSequencing {
    // return an array of size 2 having the 0th element equal to the count
    // and 1st element equal to the maximum profit
    int[] JobScheduling(Job arr[], int n) {
