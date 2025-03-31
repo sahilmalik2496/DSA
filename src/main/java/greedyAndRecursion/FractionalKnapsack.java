@@ -1,4 +1,4 @@
-package greedy;
+package greedyAndRecursion;
 
     /*
 Problem Statement: The weight of N items and their corresponding values are given. We have to put these items in a knapsack of weight W such that the total value obtained is maximized.

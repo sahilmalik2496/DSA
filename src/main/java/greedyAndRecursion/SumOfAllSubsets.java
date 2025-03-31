@@ -1,4 +1,5 @@
-package greedy
+package greedyAndRecursion;
+
 
 /*
 Sum of all Subsets

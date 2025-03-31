@@ -1,4 +1,4 @@
-package greedy;
+package greedyAndRecursion;
 
 /*
 Job Sequencing Problem

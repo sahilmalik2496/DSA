@@ -1,4 +1,6 @@
-package greedy
+package greedyAndRecursion;
+
+import java.util.*;
 
 public class Nqueen {
     private Set<Integer> col = new HashSet<Integer>();
