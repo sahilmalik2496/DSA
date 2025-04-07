@@ -1,4 +1,4 @@
-package java;
+package trie;
 
 /*
 Problem Statement: Implement a program that takes a string 'S' as input and returns the number of distinct substrings of the given string, including the empty substring. Use a trie data structure to accomplish this.
