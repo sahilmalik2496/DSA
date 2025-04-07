@@ -1,4 +1,4 @@
-package java;
+package trie;
 
 /*
 Problem Statement: Implement a Trie data structure that supports the following methods:
