@@ -9,33 +9,34 @@ A string ‘B’ is considered a substring of a string ‘A’ if ‘B’ can be
 Two strings ‘X’ and ‘Y’ are considered different if there is at least one index ‘i’ such that the character of ‘X’ at index ‘i’ is different from the character of ‘Y’ at index ‘i’ (i.e., X[i] != Y[i]).
 */
 
-class Node {
-    private final Node[] links = new Node[26];
-    private boolean isEndOfWord;
 
-    public boolean containsKey(char ch) {
-        return links[ch - 'a'] != null;
+public class DistrinctSubstringTrie {
+    public class Node {
+        private final Node[] links = new Node[26];
+        private boolean isEndOfWord;
+
+        public boolean containsKey(char ch) {
+            return links[ch - 'a'] != null;
+        }
+
+        public Node get(char ch) {
+            return links[ch - 'a'];
+        }
+
+        public void put(char ch, Node node) {
+            links[ch - 'a'] = node;
+        }
+
+        public void setEnd() {
+            isEndOfWord = true;
+        }
+
+        public boolean isEnd() {
+            return isEndOfWord;
+        }
     }
 
-    public Node get(char ch) {
-        return links[ch - 'a'];
-    }
-
-    public void put(char ch, Node node) {
-        links[ch - 'a'] = node;
-    }
-
-    public void setEnd() {
-        isEndOfWord = true;
-    }
-
-    public boolean isEnd() {
-        return isEndOfWord;
-    }
-}
-
-public class Main {
-    public static int countDistinctSubstrings(String s) {
+    public int countDistinctSubstrings(String s) {
         final Node root = new Node();
         int count = 0;
         int n = s.length();
@@ -57,7 +58,8 @@ public class Main {
 
     public static void main(String[] args) {
         String s = "striver";
+        DistrinctSubstringTrie trie = new DistrinctSubstringTrie();
         System.out.println("Current String: " + s);
-        System.out.println("Number of distinct substrings: " + countDistinctSubstrings(s));
+        System.out.println("Number of distinct substrings: " + trie.countDistinctSubstrings(s));
     }
 }

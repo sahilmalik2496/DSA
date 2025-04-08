@@ -27,6 +27,7 @@ Explanation: Insert Operations: “apple”, “apps” and “apxl” are inser
 */
 
 
+public class Trie2 {
 class Node {
     private final Node[] links = new Node[26];
     private int cntEndWith = 0;
@@ -69,7 +70,6 @@ class Node {
     }
 }
 
-public class Trie2 {
     private final Node root;
 
     public Trie2() {

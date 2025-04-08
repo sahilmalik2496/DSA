@@ -1,11 +1,25 @@
 package binaryTree;
 
+import java.util.*;
 /*
 Given the root of a binary tree, return the inorder traversal of its nodes' values.
 */
 
+
 class InOrder {
-   
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
     public List<Integer> inorderTraversal(TreeNode root) {
          ArrayList<Integer> arr = new ArrayList<>();
         if(root == null){
