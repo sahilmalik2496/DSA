@@ -10,7 +10,22 @@ The width of one level is defined as the length between the end-nodes (the leftm
 It is guaranteed that the answer will in the range of a 32-bit signed integer.
 */
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 class MaxWidth {
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
     public int widthOfBinaryTree(TreeNode root) {
         if (root == null) return 0;
 

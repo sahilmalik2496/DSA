@@ -1,5 +1,6 @@
 package binaryTree;
 
+import java.util.*;
 /*
 Given the root of a binary tree, return all root-to-leaf paths in any order.
 
@@ -8,6 +9,21 @@ A leaf is a node with no children.
  
 */
 class TreePath{
+
+    public class Node {
+        int val;
+        Node left;
+        Node right;
+        Node() {}
+        Node(int val) { this.val = val; }
+        Node(int val, Node left, Node right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+
 static boolean getPath(Node root, ArrayList < Integer > arr, int x) {
         // if root is NULL
         // there is no path
@@ -15,11 +31,11 @@ static boolean getPath(Node root, ArrayList < Integer > arr, int x) {
             return false;
 
         // push the node's value in 'arr'
-        arr.add(root.data);
+        arr.add(root.val);
 
         // if it is the required node
         // return true
-        if (root.data == x)
+        if (root.val == x)
             return true;
 
         // else check whether the required node lies

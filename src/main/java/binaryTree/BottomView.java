@@ -1,5 +1,6 @@
 package binaryTree;
 
+import java.util.*;
 /*
 Problem Statement: Given a Binary Tree, return its Bottom View. The Bottom View of a Binary Tree is the set of nodes visible when we see the tree from the bottom.
 */
@@ -7,6 +8,18 @@ Problem Statement: Given a Binary Tree, return its Bottom View. The Bottom View 
 
 class BottomView
 {
+    public class Node {
+        int val;
+        InOrder.TreeNode left;
+        InOrder.TreeNode right;
+        Node() {}
+        Node(int val) { this.val = val; }
+        Node(int val, InOrder.TreeNode left, InOrder.TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
     //Function to return a list containing the bottom view of the given tree.
     public ArrayList <Integer> bottomView(Node root)
     {

@@ -1,6 +1,6 @@
 package binaryTree;
 
-import java.utils.*;
+import java.util.*;
 
 /*
 Given a Binary Tree, perform the boundary traversal of the tree. The boundary traversal is the process of visiting the boundary nodes of the binary tree in the
@@ -8,6 +8,18 @@ anticlockwise direction, starting from the root.
 */
 
 class BoundaryTraversal {
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
     public List<Integer> boundaryOfBinaryTree(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) return result;

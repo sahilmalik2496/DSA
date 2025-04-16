@@ -1,6 +1,6 @@
 package binaryTree;
 
-import java.ultils.*;
+import java.util.*;
 
 /*
 Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
@@ -11,6 +11,18 @@ and q as the lowest node in T that has both p and q as descendants (where we all
 */
 
 class LowestCommonAncestor {
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) {
             return null;
