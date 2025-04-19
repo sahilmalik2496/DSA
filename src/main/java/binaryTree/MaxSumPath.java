@@ -11,7 +11,18 @@ Given the root of a binary tree, return the maximum path sum of any non-empty pa
 */
 
 class MaxSumPath {
-
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
     public int maxPathSum(TreeNode root) {
         int[] maxSum = new int[] { Integer.MIN_VALUE };
         maxPathDown(root, maxSum);

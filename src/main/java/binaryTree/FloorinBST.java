@@ -11,13 +11,13 @@ If the floor node does not exist, return nullptr.
 class FloorinBST {
 
    public class TreeNode {
-   int val;
+   int data;
       TreeNode left;
       TreeNode right;
       TreeNode() {}
-      TreeNode(int val) { this.val = val; }
+      TreeNode(int val) { this.data = val; }
       TreeNode(int val, TreeNode left, TreeNode right) {
-          this.val = val;
+          this.data = val;
           this.left = left;
           this.right = right;
       }

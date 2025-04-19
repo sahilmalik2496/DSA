@@ -13,6 +13,19 @@ The length of a path between two nodes is represented by the number of edges bet
 
 
 class DiameterBinaryTree {
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
     public int diameterOfBinaryTree(TreeNode root) {
         int[] max = new int[1]; // mutable container for the max diameter
         maxDepth(root, max);
