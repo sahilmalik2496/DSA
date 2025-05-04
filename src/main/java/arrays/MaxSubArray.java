@@ -1,6 +1,9 @@
 package arrays;
 
 /*
+
+https://leetcode.com/problems/maximum-subarray/description/
+
 Given an integer array nums, find the
 subarray
  with the largest sum, and return its sum.
@@ -23,8 +26,8 @@ Key Observations
     * Use a variable (sum) to track the current subarray sum.
     * Use another variable (maxx) to store the maximum sum encountered so far across all subarrays.
 3. Efficiency:
-    * Instead of evaluating all possible subarrays (which takes   O(n2) time),
-    * this approach iterates through the array once (O  O(n)) and keeps updating the result in real time.
+    * Instead of evaluating all possible subarrays (which takes O(n2) time),
+    * this approach iterates through the array once (O(n)) and keeps updating the result in real time.
 
  */
 public class MaxSubArray {

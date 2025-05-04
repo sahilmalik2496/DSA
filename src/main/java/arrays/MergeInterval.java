@@ -5,7 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 
 /*
-Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
+
+https://leetcode.com/problems/merge-intervals/description/
+
+
+Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
 
 Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
 Output: [[1,6],[8,10],[15,18]]
@@ -23,7 +27,7 @@ This greedy approach ensures all intervals are merged efficiently while maintain
 public class MergeInterval {
     public int[][] merge(int[][] intervals) {
         int n = intervals.length;
-        if (intervals == null || n == 0){
+        if (n == 0){
             return new int[0][];
         }
         List<int[]> res = new ArrayList<>();
