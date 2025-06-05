@@ -1,8 +1,12 @@
-package binarySearch
+package binarySearch;
 
 public class MatrixMedianFinder {
 
     /*
+
+    https://takeuforward.org/plus/dsa/problems/matrix-median
+
+
     Given a row-wise sorted matrix of size MXN, where M is no. of rows and N is no. of columns, find the median in the given matrix.
 
     Intuition
