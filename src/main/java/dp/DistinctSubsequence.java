@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 /*
 
-Given two strings s and t, return the number of distinct subsequences of s which equals t.
+Given two strings s and t, return the number of distinct subsequences of s which equals t.
 The test cases are generated so that the answer fits on a 32-bit signed integer.
- 
+
 Example 1:
 Input: s = "rabbbit", t = "rabbit"
 Output: 3
@@ -38,7 +38,7 @@ Key Observations
     * If the current characters do not match, skip the current character in s1 and continue looking.
 3. Base Cases:
     * If s2 is exhausted (ind2<0), it means we have found a valid subsequence in s1, so return 1.
-    * If  s1 is exhausted (ind1<0) but  s2 is not, there are no valid subsequences, so return 0 
+    * If  s1 is exhausted (ind1<0) but  s2 is not, there are no valid subsequences, so return 0
  */
 public class DistinctSubsequence {
     static int prime = (int) (Math.pow(10, 9) + 7);
