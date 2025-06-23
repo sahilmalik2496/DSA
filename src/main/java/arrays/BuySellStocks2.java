@@ -19,7 +19,10 @@ prices[i]−prices[i-1].
 Instead of explicitly keeping track of transactions, the algorithm simply adds up these "positive differences" to compute the total profit.
 The algorithm assumes that you can complete multiple transactions without restrictions (e.g., no cooldown or transaction fee).
 
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
  */
+
+
 public class BuySellStocks2 {
     public int maxProfit(int[] prices) {
         int n = prices.length;

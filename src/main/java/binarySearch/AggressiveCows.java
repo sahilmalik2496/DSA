@@ -3,6 +3,9 @@ package binarySearch;
 import java.util.Arrays;
 
 /*
+
+https://takeuforward.org/data-structure/aggressive-cows-detailed-solution/
+
 Problem Statement: You are given an array 'arr' of size 'n' which denotes the position of stalls.
 You are also given an integer 'k' which denotes the number of aggressive cows.
 You are given the task of assigning stalls to 'k' cows such that the minimum distance between any two of them is the maximum possible.
@@ -24,8 +27,8 @@ O(NlogN)+O(NlogD)=O(NlogN+NlogD)
 Since log D is at most log (max coordinate - min coordinate), it is relatively small compared to N log N, making the dominant complexity O(N log N).
 
 Final Complexity:
-(due to sorting and binary search)
-O(NlogN)(due to sorting and binary search)
+(due to sorting and binary search)
+O(NlogN)(due to sorting and binary search)
 */
 
 public class AggressiveCows {

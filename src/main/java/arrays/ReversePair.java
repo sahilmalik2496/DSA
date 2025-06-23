@@ -3,6 +3,9 @@ package arrays;
 import java.util.ArrayList;
 
 /*
+
+https://leetcode.com/problems/reverse-pairs/description/
+
 Given an integer array nums, return the number of reverse pairs in the array.
 A reverse pair is a pair (i, j) where:
 * 0 <= i < j < nums.length and
