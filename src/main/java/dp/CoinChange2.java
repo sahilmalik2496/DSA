@@ -1,10 +1,10 @@
 package dp;
 //
-//You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
-//Return the number of combinations that make up that amount. If that amount of money cannot be made up by any combination of the coins, return 0.
+//You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
+//Return the number of combinations that make up that amount. If that amount of money cannot be made up by any combination of the coins, return 0.
 //You may assume that you have an infinite number of each kind of coin.
-//The answer is guaranteed to fit into a signed 32-bit integer.
-// 
+//The answer is guaranteed to fit into a signed 32-bit integer.
+//
 //Example 1:
 //Input: amount = 5, coins = [1,2,5]
 //Output: 4
@@ -23,8 +23,8 @@ package dp;
 //        * If amount == 0, there is exactly 1 way (an empty combination).
 //        * If n == 0 (no coins left) and amount > 0, there are 0 ways to form the amount.
 //Recursive Relation:
-//        * If the current coin's value is less than or equal to the remaining amount:  dp[n][amount]=Include Current Coin+Exclude Current Coin
-//        * Otherwise: dp[n][amount]=Exclude Current Coin
+//        * If the current coin's value is less than or equal to the remaining amount:  dp[n][amount]=Include Current Coin+Exclude Current Coin
+//        * Otherwise: dp[n][amount]=Exclude Current Coin
 //Memoization:
 //        * Store the result of each subproblem dp[n][amount] to avoid redundant computations.
 
