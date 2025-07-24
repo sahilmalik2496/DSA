@@ -22,7 +22,7 @@ class FloorinBST {
           this.right = right;
       }
   }
-   public static int floorInBST(TreeNode<Integer> root, int X) {
+   public static int floorInBST(TreeNode root, int X) {
         //    Write your code here.
         int res = -1;
         while(root != null) {
