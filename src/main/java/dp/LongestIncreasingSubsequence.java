@@ -3,7 +3,9 @@ package dp;
 import java.util.Arrays;
 
 /*
-The problem is to find the length of the longest increasing subsequence (LIS) in an array. A subsequence is a sequence derived by deleting some or no elements without changing the order of the remaining elements.
+The problem is to find the length of the longest increasing subsequence (LIS) in an array.
+A subsequence is a sequence derived by deleting some or no elements without changing the
+order of the remaining elements.
 
 For example, in:
 
@@ -60,7 +62,7 @@ public class LongestIncreasingSubsequence {
             return dp[ind][prev_index + 1];
         }
 
-        int notTake = 0 + getAns(arr, n, ind + 1, prev_index, dp);
+        int notTake = getAns(arr, n, ind + 1, prev_index, dp);
 
         int take = 0;
 

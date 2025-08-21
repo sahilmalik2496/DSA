@@ -71,7 +71,7 @@ public class FrogJump {
 
         // After processing all stones, check if the last stone has any reachable jumps.
         // If the set of jumps for the last stone is not empty, it means we can reach it.
-        return !dp.get(stones[stones.length - 1]).isEmpty();
+        return !dp.get(stones[stones.length - 1]).isEmpty(); 
     }
 
     public static void main(String[] args) {

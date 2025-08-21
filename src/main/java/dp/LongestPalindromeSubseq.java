@@ -40,4 +40,34 @@ public class LongestPalindromeSubseq {
 
         return dp[n][n]; // Length of the longest palindromic subsequence
     }
+
+    /*
+     private int longestPalindromeSubseqRecursive(String s, int left, int right) {
+        // Base case: If the pointers cross, the subsequence is empty.
+        if (left > right) {
+            return 0;
+        }
+        if (left == right) {
+            return 1;
+        }
+
+        // Check if the result for this subproblem is already computed.
+        if (memo[left][right] != -1) {
+            return memo[left][right];
+        }
+
+        int result;
+        if (s.charAt(left) == s.charAt(right)) {
+            result = 2 + longestPalindromeSubseqRecursive(s, left + 1, right - 1);
+        } else {
+            int excludeLeft = longestPalindromeSubseqRecursive(s, left + 1, right);
+            int excludeRight = longestPalindromeSubseqRecursive(s, left, right - 1);
+            result = Math.max(excludeLeft, excludeRight);
+        }
+
+        // Store the computed result in the memoization table before returning.
+        memo[left][right] = result;
+        return result;
+    }
+     */
 }
