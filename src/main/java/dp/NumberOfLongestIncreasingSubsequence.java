@@ -62,6 +62,7 @@ If arr[prev] < arr[i], update dp[i] and ct[i] based on LIS conditions.
 Find the maximum LIS length (maxi).
 Count all occurrences of this LIS in ct[i] and return the total count.
 
+
  */
 public class NumberOfLongestIncreasingSubsequence {
         static int findNumberOfLIS(int[] arr){
@@ -108,4 +109,93 @@ public class NumberOfLongestIncreasingSubsequence {
             System.out.println("The count of LIS is "+findNumberOfLIS(arr));
 
         }
+
+        /*
+
+        public static int findNumberOfLIS(int[] arr) {
+            int n = arr.length;
+            if (n == 0) {
+                return 0;
+            }
+
+            nums = arr;
+            memoLength = new int[n];
+            memoCount = new int[n];
+
+            // Initialize memoization tables with -1 to indicate uncomputed state
+            Arrays.fill(memoLength, -1);
+            Arrays.fill(memoCount, -1);
+
+            int maxLen = 0;
+            int count = 0;
+
+            // Iterate through each element as a potential ending point for the LIS
+            for (int i = 0; i < n; i++) {
+                int[] result = solve(i);
+                int currentLen = result[0];
+                int currentCount = result[1];
+
+                // If we found a new maximum length, reset the count
+                if (currentLen > maxLen) {
+                    maxLen = currentLen;
+                    count = currentCount;
+                }
+                // If we found an LIS of the same maximum length, add to the count
+                else if (currentLen == maxLen) {
+                    count += currentCount;
+                }
+            }
+
+            return count;
+        }
+    private static int[] solve(int index) {
+        // Check if the result for this subproblem is already in the memo table
+        if (memoLength[index] != -1) {
+            return new int[]{memoLength[index], memoCount[index]};
+        }
+
+        // Base case: The LIS ending at 'index' is at least the element itself
+        int currentLength = 1;
+        int currentCount = 1;
+
+        // Iterate through all elements before the current index
+        for (int prev = 0; prev < index; prev++) {
+            // Check if the previous element can form an increasing subsequence
+            if (nums[prev] < nums[index]) {
+                // Recursively get the LIS length and count for the previous element
+                int[] prevResult = solve(prev);
+                int prevLength = prevResult[0];
+                int prevCount = prevResult[1];
+
+                // Case 1: Found a new, longer LIS
+                if (prevLength + 1 > currentLength) {
+                    currentLength = prevLength + 1;
+                    currentCount = prevCount;
+                }
+                // Case 2: Found an LIS of the same length
+                else if (prevLength + 1 == currentLength) {
+                    currentCount += prevCount;
+                }
+            }
+        }
+
+        // Memoize the calculated result before returning
+        memoLength[index] = currentLength;
+        memoCount[index] = currentCount;
+
+        return new int[]{currentLength, currentCount};
+    }
+
+    public static void main(String[] args) {
+        int[] arr1 = {1, 3, 5, 4, 7};
+        System.out.println("The count of LIS for {1, 3, 5, 4, 7} is: " + findNumberOfLIS(arr1));
+
+        int[] arr2 = {2, 2, 2, 2, 2};
+        System.out.println("The count of LIS for {2, 2, 2, 2, 2} is: " + findNumberOfLIS(arr2));
+
+        int[] arr3 = {1, 5, 4, 3, 2, 6, 7, 2};
+        System.out.println("The count of LIS for {1, 5, 4, 3, 2, 6, 7, 2} is: " + findNumberOfLIS(arr3));
+    }
+}
+         */
 }
