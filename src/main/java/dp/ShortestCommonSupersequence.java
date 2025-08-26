@@ -1,8 +1,10 @@
 package dp;
 /*
-Given two strings str1 and str2, return the shortest string that has both str1 and str2 as subsequences. If there are multiple valid strings, return any of them.
-A string s is a subsequence of string t if deleting some number of characters from t (possibly 0) results in the string s.
- 
+Given two strings str1 and str2, return the shortest string that has both str1 and str2 as subsequences.
+If there are multiple valid strings, return any of them.
+A string s is a subsequence of string t if deleting some number of characters from t (possibly 0)
+results in the string s.
+
 Example 1:
 Input: str1 = "abac", str2 = "cab"
 Output: "cabac"
@@ -19,12 +21,13 @@ Key Concepts
 1. Supersequence:
     * A supersequence of two strings s1 and  s2 includes all characters of both strings while maintaining their relative order.
     * Example:
-        *  s1 = "abc", s2 = "ac"
-        * Possible supersequence: " "abc","abac".
-        * Shortest supersequence: "  "abc".
+        *  s1 = "abc", s2 = "ac"
+        * Possible supersequence: " "abc","abac".
+        * Shortest supersequence: " "abc".
 2. Relation with Longest Common Subsequence (LCS):
-    * The shortest common supersequence is formed by merging  s1 and s2  s2 while avoiding redundancy, which can be minimized using the LCS.
-    * For strings  s1 and s2 the length of the SCS is:  SCS Length=Length of s1+Length of s2−Length of LCS
+    * The shortest common supersequence is formed by merging  s1 and s2 s2 while avoiding redundancy, which can be
+    minimized using the LCS.
+    * For strings  s1 and s2 the length of the SCS is:  SCS Length=Length of s1+Length of s2−Length of LCS
 3. Reconstruction of the SCS:
     * Use the DP table for the LCS to trace back and construct the shortest common supersequence.
  */

@@ -23,8 +23,10 @@ n into smaller pieces at specific positions given in the cuts array. Each cut ha
 
 Intuition
 This is a classic Dynamic Programming (DP) problem where:
-1. We recursively calculate the cost of cutting the stick at different positions and combine the results for optimal solutions.
-2. The problem is analogous to the Matrix Chain Multiplication or Optimal Binary Search Tree problems, where the order of operations impacts the result.
+1. We recursively calculate the cost of cutting the stick at different positions and combine the results for
+optimal solutions.
+2. The problem is analogous to the Matrix Chain Multiplication or Optimal Binary Search Tree problems,
+ where the order of operations impacts the result.
 
 Key Observations
 1. Cut Cost Calculation:
