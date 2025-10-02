@@ -3,6 +3,7 @@ package graph;
 import java.util.*;
 
 class KruskalMst {
+
     public static int spanningTree(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj) {
         List<Edge> edges = new ArrayList<>();
 
@@ -13,11 +14,11 @@ class KruskalMst {
         }
 
         Collections.sort(edges);
-        Disjoint ds = new Disjoint(V);
+        DisjointSet ds = new DisjointSet(V);
         int mstWeight = 0;
 
         for (Edge edge : edges) {
-            if (ds.find(edge.src) != ds.find(edge.dest)) { // ✅ Now it will work
+            if (ds.findUPar(edge.src) != ds.findUPar(edge.dest)) { // ✅ Now it will work
                 mstWeight += edge.weight;
                 ds.unionBySize(edge.src, edge.dest);
             }
