@@ -53,7 +53,12 @@ class DisjointSet {
 
     public static void main(String[] args) {
         DisjointSet ds = new DisjointSet(7);
-
+        /*
+           7
+        3  6
+        2  5
+        1  4
+         */
         ds.unionBySize(1, 2);
         ds.unionBySize(2, 3);
         ds.unionBySize(4, 5);
