@@ -1,5 +1,8 @@
 package heaps;
 
+/*
+https://leetcode.com/problems/design-a-stack-with-increment-operation/
+ */
 public class StackWithArray {
         int size = 10000;
         int arr[] = new int[size];

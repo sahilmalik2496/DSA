@@ -4,7 +4,11 @@ import java.util.Collections;
 import java.util.PriorityQueue;
 
 /*
-The median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value, and the median is the mean of the two middle values.
+
+ https://leetcode.com/problems/find-median-from-data-stream/
+
+The median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value,
+ and the median is the mean of the two middle values.
 
 For example, for arr = [2,3,4], the median is 3.
 For example, for arr = [2,3], the median is (2 + 3) / 2 = 2.5.
@@ -47,11 +51,13 @@ If 99% of all integer numbers from the stream are in the range [0, 100], how wou
 
 
 Intuition
-The problem requires finding the median of a continuously growing data stream efficiently. The median is the middle value in a sorted list:
+The problem requires finding the median of a continuously growing data stream efficiently. The median is the middle
+value in a sorted list:
 
 If the number of elements is odd, the median is the middle element.
 If the number of elements is even, the median is the average of the two middle elements.
-Since inserting elements into a sorted list and finding the median repeatedly would be inefficient (O(N log N) per insert if using sorting), we use two heaps (priority queues) to maintain balance efficiently:
+Since inserting elements into a sorted list and finding the median repeatedly would be inefficient (O(N log N) per insert
+if using sorting), we use two heaps (priority queues) to maintain balance efficiently:
 
 Max Heap (Left Half - maxQ): Stores the smaller half of the numbers (largest element on top).
 Min Heap (Right Half - minQ): Stores the larger half of the numbers (smallest element on top).
@@ -94,6 +100,7 @@ public class MedianInDataStream {
         } else if (maxQ.size() < minQ.size()){
             maxQ.add(minQ.poll());
         }
+
 
     }
 
