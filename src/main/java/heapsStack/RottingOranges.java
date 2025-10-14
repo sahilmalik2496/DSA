@@ -1,4 +1,4 @@
-package heaps;
+package heapsStack;
 
 import java.util.LinkedList;
 import java.util.Queue;

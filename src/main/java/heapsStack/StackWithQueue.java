@@ -1,4 +1,4 @@
-package heaps;
+package heapsStack;
 
 /*
 https://leetcode.com/problems/implement-stack-using-queues/
