@@ -4,7 +4,8 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /*
-You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
+You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the
+ array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
 
 Return the max sliding window.
 
@@ -27,7 +28,8 @@ Input: nums = [1], k = 1
 Output: [1]
 
  Intuition
-The brute force approach would involve iterating over each window and finding the maximum, but that would take O(n * k) time, which is inefficient.
+The brute force approach would involve iterating over each window and finding the maximum, but that would take O(n * k) time,
+ which is inefficient.
 Instead, we can use a deque (double-ended queue) to efficiently maintain the maximum of the current window.
 The deque stores indices, and we ensure that the maximum element is always at the front of the deque.
 2️⃣ Algorithm
