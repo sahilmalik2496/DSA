@@ -7,15 +7,19 @@ public class MatrixMedianFinder {
     https://takeuforward.org/plus/dsa/problems/matrix-median
 
 
-    Given a row-wise sorted matrix of size MXN, where M is no. of rows and N is no. of columns, find the median in the given matrix.
+    Given a row-wise sorted matrix of size MXN, where M is no. of rows and N is no. of columns, find the median in the
+    given matrix.
 
     Intuition
-The problem is to find the median of a row-wise sorted matrix efficiently. A brute force approach would be to extract all elements, sort them, and find the median, but that would take O(N × M log(N × M)) time, which is inefficient for large matrices.
+The problem is to find the median of a row-wise sorted matrix efficiently. A brute force approach would be to extract
+all elements, sort them, and find the median, but that would take O(N × M log(N × M)) time, which is inefficient for
+large matrices.
 
 Instead, we use binary search on the value range (not indices) to efficiently determine the median:
 
 Value Range for Binary Search
-Since the matrix is sorted row-wise, the smallest element is in the first row's first column, and the largest element is in the last row's last column.
+Since the matrix is sorted row-wise, the smallest element is in the first row's first column, and the largest element
+is in the last row's last column.
 However, instead of directly finding min and max, we start with a broad range:
 
 Binary Search Process
@@ -23,7 +27,8 @@ We take the middle value (mid) and count how many numbers are ≤ mid in the mat
 If the count of numbers ≤ mid is ≤ half of total elements, it means the median is greater, so we increase low.
 Otherwise, we decrease high to narrow the search.
 Finding the Median
-Since the median is the smallest number where at least half the elements are ≤ median, we return low after the binary search ends.
+Since the median is the smallest number where at least half the elements are ≤ median, we return low after the binary
+ search ends.
 Time Complexity Analysis
 Let's break it down:
 
@@ -48,14 +53,7 @@ Brute Force: Sorting all elements → O(NM log(NM))
 Optimized Approach: O(N log M)
 This is much faster, especially for large matrices (e.g., 
     */
-    /**
-     * Counts the number of elements in a sorted array that are less than or equal to mid.
-     * Uses binary search for efficiency.
-     * @param array The sorted array.
-     * @param mid The value to compare.
-     * @param size The size of the array.
-     * @return The count of elements <= mid.
-     */
+
     private static int countSmallerThanOrEqual(int[] array, int mid, int size) {
         int left = 0, right = size - 1;
         while (left <= right) {
@@ -68,14 +66,7 @@ This is much faster, especially for large matrices (e.g.,
         }
         return left;
     }
-    
-    /**
-     * Finds the median of a row-wise sorted matrix using binary search on the value range.
-     * @param matrix The row-wise sorted matrix.
-     * @param rows The number of rows.
-     * @param cols The number of columns.
-     * @return The median value.
-     */
+
     public static int findMedian(int[][] matrix, int rows, int cols) {
         int low = 1, high = 1_000_000_000;
         while (low <= high) {
