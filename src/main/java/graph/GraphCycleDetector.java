@@ -13,7 +13,8 @@ class GraphCycleDetector {
     }
 
     // Function to check for a cycle using BFS
-    static boolean hasCycleBFS(ArrayList<ArrayList<Integer>> adj, int start, boolean[] visited) {
+    static boolean hasCycleBFS(ArrayList<ArrayList<Integer>> adj, int start,
+                               boolean[] visited) {
         Queue<Node> queue = new LinkedList<>();
         queue.add(new Node(start, -1));
         visited[start] = true;
@@ -36,7 +37,8 @@ class GraphCycleDetector {
     }
 
     // Function to detect a cycle in an undirected graph
-    public static boolean containsCycle(int vertices, ArrayList<ArrayList<Integer>> adj) {
+    public static boolean containsCycle(int vertices,
+                                        ArrayList<ArrayList<Integer>> adj) {
         boolean[] visited = new boolean[vertices];
 
         for (int i = 0; i < vertices; i++) {
