@@ -27,8 +27,7 @@ First DFS Traversal:
 O(V+E)
 Graph Transposition: 
 O(V+E)
-Second DFS Traversal: 
-
+Second DFS Traversal:
 O(V+E)
 Total Complexity: 
 

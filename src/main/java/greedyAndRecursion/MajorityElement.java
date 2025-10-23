@@ -3,7 +3,8 @@ package greedyAndRecursion;
 /*
 Given an array nums of size n, return the majority element.
 
-The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element
+always exists in the array.
 
 Example 1:
 
@@ -19,15 +20,15 @@ public class MajorityElement {
         int n = nums.length;
 
         int max_el = nums[0], cnt =0;
-        for(int i=0; i< n; i++) {
-            if (nums[i] == max_el){
+        for (int num : nums) {
+            if (num == max_el) {
                 cnt++;
             } else {
                 cnt--;
             }
 
-            if (cnt ==0) {
-                max_el = nums[i];
+            if (cnt == 0) {
+                max_el = num;
                 cnt = 1;
             }
         }

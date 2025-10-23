@@ -1,4 +1,4 @@
-package heaps;
+package heapsStack;
 
 import java.util.HashMap;
 
@@ -73,7 +73,6 @@ class LFUCache {
             Node next=head.next;
             head.next=v;
             v.prev=head;
-            head.next=v;
             v.next=next;
             next.prev=v;
         }

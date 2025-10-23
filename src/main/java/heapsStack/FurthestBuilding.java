@@ -1,4 +1,4 @@
-package heaps;
+package heapsStack;
 /*
 You are given an integer array heights representing the heights of buildings, some bricks, and some ladders.
 You start your journey from building 0 and move to the next building by possibly using bricks or ladders.
@@ -21,7 +21,9 @@ The goal of the problem is to determine the farthest building you can reach by e
 
 Using bricks to cover smaller height differences.
 Using ladders to handle larger height differences.
-Since ladders can cover larger jumps more flexibly, an optimal strategy is to prioritize ladders for the largest height differences and use bricks for smaller ones. The PriorityQueue (max-heap) is used to keep track of the height differences we've used bricks for, allowing us to replace the largest one with a ladder when necessary.
+Since ladders can cover larger jumps more flexibly, an optimal strategy is to prioritize ladders for the largest height
+differences and use bricks for smaller ones. The PriorityQueue (max-heap) is used to keep track of the height differences
+ we've used bricks for, allowing us to replace the largest one with a ladder when necessary.
 
 Algorithm Explanation
 Initialization:

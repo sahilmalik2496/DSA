@@ -1,4 +1,4 @@
-package heaps;
+package heapsStack;
 
 import java.util.Collections;
 import java.util.Iterator;

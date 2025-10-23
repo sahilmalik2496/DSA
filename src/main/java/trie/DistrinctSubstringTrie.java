@@ -1,12 +1,18 @@
 package trie;
 
 /*
-Problem Statement: Implement a program that takes a string 'S' as input and returns the number of distinct substrings of the given string, including the empty substring. Use a trie data structure to accomplish this.
+
+https://takeuforward.org/plus/dsa/problems/number-of-distinct-substrings-in-a-string
+
+Problem Statement: Implement a program that takes a string 'S' as input and returns the number of distinct substrings of
+the given string, including the empty substring. Use a trie data structure to accomplish this.
 
 Note:
 
-A string ‘B’ is considered a substring of a string ‘A’ if ‘B’ can be obtained by deleting zero or more characters from the start and end of ‘A’.
-Two strings ‘X’ and ‘Y’ are considered different if there is at least one index ‘i’ such that the character of ‘X’ at index ‘i’ is different from the character of ‘Y’ at index ‘i’ (i.e., X[i] != Y[i]).
+A string ‘B’ is considered a substring of a string ‘A’ if ‘B’ can be obtained by deleting zero or more characters from the
+ start and end of ‘A’.
+Two strings ‘X’ and ‘Y’ are considered different if there is at least one index ‘i’ such that the character of ‘X’ at
+index ‘i’ is different from the character of ‘Y’ at index ‘i’ (i.e., X[i] != Y[i]).
 */
 
 

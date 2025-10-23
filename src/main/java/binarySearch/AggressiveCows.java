@@ -8,7 +8,8 @@ https://takeuforward.org/data-structure/aggressive-cows-detailed-solution/
 
 Problem Statement: You are given an array 'arr' of size 'n' which denotes the position of stalls.
 You are also given an integer 'k' which denotes the number of aggressive cows.
-You are given the task of assigning stalls to 'k' cows such that the minimum distance between any two of them is the maximum possible.
+You are given the task of assigning stalls to 'k' cows such that the minimum distance between any two of them is the
+maximum possible.
 Find the maximum possible minimum distance.
 
 Example 1:
@@ -17,14 +18,16 @@ Input Format:
 Result:
  3
 Explanation:
- The maximum possible minimum distance between any two cows will be 3 when 4 cows are placed at positions {0, 3, 7, 10}. Here the distances between cows are 3, 4, and 3 respectively. We cannot make the minimum distance greater than 3 in any ways.
+ The maximum possible minimum distance between any two cows will be 3 when 4 cows are placed at positions {0, 3, 7, 10}.
+ Here the distances between cows are 3, 4, and 3 respectively. We cannot make the minimum distance greater than 3 in any ways.
 
 Overall Complexity
 The binary search runs O(log D) times.
 Each binary search iteration calls canPlaceCows(), which runs in O(N).
 Thus, the overall time complexity is:
 O(NlogN)+O(NlogD)=O(NlogN+NlogD)
-Since log D is at most log (max coordinate - min coordinate), it is relatively small compared to N log N, making the dominant complexity O(N log N).
+Since log D is at most log (max coordinate - min coordinate), it is relatively small compared to N log N, making the
+dominant complexity O(N log N).
 
 Final Complexity:
 (due to sorting and binary search)

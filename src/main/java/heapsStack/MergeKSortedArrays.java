@@ -1,7 +1,11 @@
-package heaps;
+package heapsStack;
 import java.util.*;
 /*
-You have been given ‘K’ different arrays/lists, which are sorted individually (in ascending order). You need to merge all the given arrays/list such that the output array/list should be sorted in ascending order.
+
+https://practice.geeksforgeeks.org/problems/merge-k-sorted-arrays/1
+
+You have been given ‘K’ different arrays/lists, which are sorted individually (in ascending order). You need to merge
+ all the given arrays/list such that the output array/list should be sorted in ascending order.
 Input: K = 3, arr = { {1, 3, 5, 7}, {2, 4, 6, 8}, {0, 9, 10, 11}}
 Output: 0 1 2 3 4 5 6 7 8 9 10 11
 
