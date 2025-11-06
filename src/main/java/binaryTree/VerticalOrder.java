@@ -2,6 +2,9 @@ package binaryTree;
 
 import java.util.*;
 /*
+
+https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
+
 Given the root of a binary tree, calculate the vertical order traversal of the binary tree.
 
 For each node at position (row, col), its left and right children will be at positions (row + 1, col - 1) and (row + 1, col + 1) respectively. The root of the tree is at (0, 0).

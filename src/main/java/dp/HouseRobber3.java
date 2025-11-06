@@ -3,6 +3,9 @@ package dp;
 import javax.swing.tree.TreeNode;
 
 /*
+
+https://leetcode.com/problems/house-robber-iii/description/
+
 The thief has found himself a new place for his thievery again. There is only one entrance to this area, called root.
 Besides the root, each house has one and only one parent house. After a tour, the smart thief realized that all houses in this place form a binary tree. It will automatically contact the police if two directly-linked houses were broken into on the same night.
 Given the root of the binary tree, return the maximum amount of money the thief can rob without alerting the police.
@@ -15,9 +18,11 @@ Explanation: Maximum amount of money the thief can rob = 3 + 3 + 1 = 7.
 
 
 Intuition
-The problem can be broken into subproblems using Dynamic Programming (DP) with recursion. The idea is to calculate, for every node, the maximum sum we can get:
+The problem can be broken into subproblems using Dynamic Programming (DP) with recursion. The idea is to calculate,
+ for every node, the maximum sum we can get:
 1. When the node is robbed: The sum includes the node's value but excludes its children's values.
-2. When the node is not robbed: The sum is the maximum possible sum from its children (regardless of whether they are robbed or not).
+2. When the node is not robbed: The sum is the maximum possible sum from its children (regardless of whether they are
+robbed or not).
 The recursion traverses the tree in a post-order fashion (process left child, right child, then the current node), allowing us to compute the result bottom-up.
 
 
