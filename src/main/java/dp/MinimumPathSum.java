@@ -1,11 +1,13 @@
 package dp;
 
-//Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
-//        Note: You can only move either down or right at any point in time.
+//Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum
+// of all numbers along its path.
+//        Note: You can only move either down or right at any point in time.
 //        Input: grid = [[1,3,1],[1,5,1],[4,2,1]]
 //Output: 7
 //Explanation: Because the path 1 → 3 → 1 → 1 → 1 minimizes the sum.
-//The problem can be solved using Dynamic Programming (DP). The idea is to calculate the minimum sum for each cell in the grid, building up from the top-left to the bottom-right.
+//The problem can be solved using Dynamic Programming (DP). The idea is to calculate the minimum sum for each cell in the
+// grid, building up from the top-left to the bottom-right.
 //1. Recursive Relation:
 //        • To reach a cell (i, j, you can come either from the left (i, j - 1) or from the top (i -
 //        1, 5).
