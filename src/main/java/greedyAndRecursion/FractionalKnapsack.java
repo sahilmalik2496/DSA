@@ -1,6 +1,9 @@
 package greedyAndRecursion;
 
     /*
+
+    https://www.geeksforgeeks.org/fractional-knapsack-problem/
+
 Problem Statement: The weight of N items and their corresponding values are given. We have to put these items in a
 knapsack of weight W such that the total value obtained is maximized.
 
@@ -19,7 +22,7 @@ Total value = 100 + 60 + 80 = 240.00
     
 import java.util.*;
 
-public class FractionalKnapsack {
+public class  FractionalKnapsack {
 
 class Item {
     int value, weight;
