@@ -9,11 +9,13 @@ https://takeuforward.org/data-structure/count-the-number-of-subarrays-with-given
 
 
  Count the number of subarrays with given xor K
-Problem Statement: Given an array of integers A and an integer B. Find the total number of subarrays having bitwise XOR of all elements equal to k.
+Problem Statement: Given an array of integers A and an integer B. Find the total number of subarrays having
+bitwise XOR of all elements equal to k.
 
 The problem is to count the number of subarrays in an array
 a that have a XOR value equal to
-k. The XOR operation has certain properties that make this problem efficient to solve using a prefix XOR and a hashmap.
+k. The XOR operation has certain properties that make this problem efficient to solve using a prefix XOR
+and a hashmap.
 Key Properties of XOR:
 
 A⊕A=0 (XOR of a number with itself is 0).

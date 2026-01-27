@@ -42,4 +42,18 @@ public class TopKFrequentElement {
         Collections.reverse(res);
         return res;
     }
+
+    public static void main(String[] args) {
+        TopKFrequentElement solver = new TopKFrequentElement();
+
+        String[] words = {"i", "love", "leetcode", "i", "love", "coding"};
+        int k = 2;
+        List<String> result = solver.topKFrequent(words, k);
+        System.out.println("Top " + k + " frequent words: " + result);
+
+        // Additional quick test
+        String[] words2 = {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"};
+        k = 4;
+        System.out.println("Top " + k + " frequent words: " + solver.topKFrequent(words2, k));
+    }
 }
