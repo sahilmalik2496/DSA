@@ -30,6 +30,8 @@ class MedianArrays {
         int count = nums1.length - nums2.length;
         while(low <= high) {
             int c1 = (low + high) /2;
+            //Since we want the combined left half to contain exactly half of the total elements.
+            // once c1 is chosen, c2 must be the remaining number of elements needed to fill that half.
             int c2 = ((n1 + n2 + 1) /2) - c1;
             int l1 = c1 == 0 ? Integer.MIN_VALUE: nums1[c1-1];
             int l2 = c2 == 0 ? Integer.MIN_VALUE: nums2[c2-1];

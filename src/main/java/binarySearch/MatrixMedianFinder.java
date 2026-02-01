@@ -18,12 +18,14 @@ large matrices.
 Instead, we use binary search on the value range (not indices) to efficiently determine the median:
 
 Value Range for Binary Search
-Since the matrix is sorted row-wise, the smallest element is in the first row's first column, and the largest element
+Since the matrix is sorted row-wise, the smallest element is in the first row's first column, and the largest
+ element
 is in the last row's last column.
 However, instead of directly finding min and max, we start with a broad range:
 
 Binary Search Process
-We take the middle value (mid) and count how many numbers are ≤ mid in the matrix using binary search on each row.
+We take the middle value (mid) and count how many numbers are ≤ mid in the matrix using binary search on each
+ row.
 If the count of numbers ≤ mid is ≤ half of total elements, it means the median is greater, so we increase low.
 Otherwise, we decrease high to narrow the search.
 Finding the Median
