@@ -1,5 +1,7 @@
 package dp;
 
+import java.util.Arrays;
+
 /*
 
 https://leetcode.com/problems/edit-distance/description/
@@ -77,10 +79,8 @@ public class EditDistance {
         int n1 = word1.length();
         int n2 = word2.length();
         int[][] dp = new int[n1][n2];
-        for (int i = 0; i < n1; i++) {
-            for (int j = 0; j < n2; j++) {
-                dp[i][j] = -1;
-            }
+        for(int[] row: dp){
+            Arrays.fill(row, -1);
         }
         return solve(n1 - 1, n2 - 1, word1, word2, dp);
     }

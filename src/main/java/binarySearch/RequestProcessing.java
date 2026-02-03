@@ -1,10 +1,14 @@
 package binarySearch;
 
 /*
-There are n services numbered from 1 to n in a system, and there are m requests to be processed. The service in which the
-ith request is cached is denoted by cache[i] for all 1 <= i <= m. For any request, if it is processed from the cache,
-then it takes 1 unit of time, otherwise 2 units of time. Different services can process different requests simultaneously,
-but one service can only process one request at a time. Find the minimum time to process all the requests by allocating each
+
+https://leetcode.com/problems/minimum-time-to-process-all-requests/description/
+
+There are n services numbered from 1 to n in a system, and there are m requests to be processed. The service
+ in which the ith request is cached is denoted by cache[i] for all 1 <= i <= m. For any request, if it is
+ processed from the cache, then it takes 1 unit of time, otherwise 2 units of time. Different services can
+  process different requests simultaneously, but one service can only process one request at a time.
+  Find the minimum time to process all the requests by allocating each
 request to a service.
 
 Given the sample input in `main`:

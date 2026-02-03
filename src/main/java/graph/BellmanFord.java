@@ -5,7 +5,8 @@ import java.util.Arrays;
 
 /*
 Bellman Ford Algorithm: G-41
-Problem Statement: Given a weighted, directed and connected graph of V vertices and E edges, Find the shortest distance of
+Problem Statement: Given a weighted, directed and connected graph of V vertices and E edges, Find the
+shortest distance of
 all the vertices from the source vertex S.
 
 How to detect a negative cycle in the graph?
