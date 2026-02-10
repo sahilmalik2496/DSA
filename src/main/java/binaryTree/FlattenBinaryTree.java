@@ -12,6 +12,21 @@ The "linked list" should use the same TreeNode class where the right child point
 The "linked list" should be in the same order as a pre-order traversal of the binary tree.
 
 
+The logic relies on a global variable prev to keep track of the node that was "just processed."
+
+Right-to-Left Traversal: The code calls flat(root.right) then flat(root.left). This ensures that the
+ recursion reaches the rightmost, bottom-most node of the tree first.
+
+The "Relinking" Step:
+
+root.right = prev;: The current node's right pointer is set to the node we processed in the previous step.
+
+root.left = null;: The left pointer is cleared (required for a "flattened" linked list).
+
+Updating prev:
+
+prev = root;: The current node now becomes the "previous" node for the next step up the recursive stack.
+
 */
 
 

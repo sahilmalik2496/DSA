@@ -3,6 +3,39 @@ package binaryTree;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+Both functions reconstruct the same binary tree from `inorder` plus one other traversal, but they pick
+ the root and compute subtree ranges differently.
+
+- Root selection
+  - `build` (preorder + inorder): root is `preorder[preStart]` (first element of current preorder range).
+  - `buildPostOrder` (postorder + inorder): root is `postorder[postEnd]` (last element of current
+  postorder range).
+
+- Using `inorder` to split
+  - Both use the map to get `rootIndex` in `inorder`, then compute `leftSize = rootIndex - inStart`
+  (number of nodes in left subtree).
+
+- How subtree ranges are computed
+  - Preorder:
+    - Left subtree preorder range: `preStart+1` .. `preStart+leftSize`
+    - Right subtree preorder range: `preStart+leftSize+1` .. `preEnd`
+    - Inorder ranges: left `inStart`..`rootIndex-1`, right `rootIndex+1`..`inEnd`
+    - Reason: preorder lists root first, then left subtree, then right subtree.
+  - Postorder:
+    - Left subtree postorder range: `postStart` .. `postStart+leftSize-1`
+    - Right subtree postorder range: `postStart+leftSize` .. `postEnd-1`
+    - Inorder ranges: same split as above
+    - Reason: postorder lists left subtree, then right subtree, then root at the end.
+
+- Other differences
+  - `build` prints `root.val` (side effect).
+  - Parameter ordering / boundary indices differ to reflect where the root sits in the traversal array.
+
+- Complexity
+  - Both run in O(n) time with O(n) extra space for the map and recursion stack.
+ */
+
 public class ConstructTreeFromPreAndInOrder {
 
      public class TreeNode {
