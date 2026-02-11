@@ -4,7 +4,8 @@ package binaryTree;
 https://practice.geeksforgeeks.org/problems/floor-in-bst/1
  Given a Binary Search Tree and a key, return the floor of the given key in the Binary Search Tree.
 
-Floor of a value refers to the value of the largest node in the Binary Search Tree that is smaller than or equal to the given key.
+Floor of a value refers to the value of the largest node in the Binary Search Tree that is smaller than
+or equal to the given key.
 If the floor node does not exist, return nullptr.
 
 */
