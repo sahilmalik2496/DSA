@@ -17,7 +17,7 @@ class Disjoint {
         }
     }
 
-    // ✅ Make this method PUBLIC to be accessible from KruskalMst
+    // ✅ Make this method PUBLIC to be accessible from n
     public int find(int node) {
         if (node != parent.get(node)) {
             parent.set(node, find(parent.get(node))); // Path Compression
