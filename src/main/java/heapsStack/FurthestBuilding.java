@@ -1,5 +1,8 @@
 package heapsStack;
 /*
+
+https://leetcode.com/problems/furthest-building-you-can-reach/description/
+
 You are given an integer array heights representing the heights of buildings, some bricks, and some ladders.
 You start your journey from building 0 and move to the next building by possibly using bricks or ladders.
 While moving from building i to building i+1 (0-indexed),
@@ -36,7 +39,8 @@ Using Bricks:
 If diff > 0 and you have enough bricks (bricks >= diff), use the bricks to cover the difference and record diff in the max-heap.
 Using Ladders:
 If bricks are not enough (bricks < diff) but ladders are still available:
-Check the largest height difference (pq.peek()) that has been covered by bricks. If it’s greater than the current diff, replace it with a ladder. This gives back bricks equal to the difference (top - diff), freeing up resources for smaller jumps.
+Check the largest height difference (pq.peek()) that has been covered by bricks. If it’s greater than the current diff,
+replace it with a ladder. This gives back bricks equal to the difference (top - diff), freeing up resources for smaller jumps.
 If no larger height differences exist in the heap, simply use a ladder for the current jump.
 Terminate If Neither Is Available:
 If you can’t cover the diff with bricks or ladders, stop. The current building index i will be the farthest you can reach.

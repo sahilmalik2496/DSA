@@ -6,6 +6,36 @@ import java.util.Arrays;
 
 class GraphColoring {
 
+    /*
+    Problem: M-Coloring (Graph Coloring)
+
+Description
+- Given an undirected graph and an integer `M`, determine whether the graph can be colored using at most `M` colors such that no two adjacent vertices share the same color.
+- If a valid coloring exists, return/print that the graph is colorable and provide one valid color assignment (colors numbered `1..M`). Otherwise return/print that it is not possible.
+
+Input
+- `N` — number of vertices (vertices are `0`-indexed).
+- `M` — maximum number of colors.
+- `E` — number of edges (implicit or given).
+- `edges` — list of `E` pairs `(u, v)` representing undirected edges.
+
+Output
+- A boolean indicating whether a valid coloring using at most `M` colors exists.
+- If true, a color assigned to every vertex (an array of length `N` with values in `1..M`).
+
+Constraints (practical)
+- `N >= 1`. Backtracking solution is exponential; `N` is typically small (e.g., `N <= 20–25`) for brute-force search.
+- `0 <= u, v < N`.
+
+Example
+- Input: `N = 4`, `M = 3`, `edges = {{0,1},{1,2},{2,3},{3,0},{0,2}}`
+- Possible output:
+  - Colorable: `true` (or `1`)
+  - One valid assignment: `Node 0 -> Color 1`, `Node 1 -> Color 2`, `Node 2 -> Color 3`, `Node 3 -> Color 2`
+
+     */
+
+
     public static boolean graphColoring(List<Integer>[] G, int[] color, int i, int C) {
         return backtrackGraphColoring(i, G, color, G.length, C);
     }

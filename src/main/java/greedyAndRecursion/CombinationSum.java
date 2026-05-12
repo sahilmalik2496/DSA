@@ -38,7 +38,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 class CombinationSum {
-    private void backtrack(int[] candidates, int target, int index, List<Integer> curr, List<List<Integer>> ans) {
+    private void backtrack(int[] candidates, int target, int index, List<Integer> curr,
+                           List<List<Integer>> ans) {
         if (target < 0) return; // Stop if target becomes negative
         if (target == 0) { // Target reached
             ans.add(new ArrayList<>(curr));

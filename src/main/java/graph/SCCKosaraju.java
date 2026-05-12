@@ -20,7 +20,8 @@ Create a transposed graph where all the edges are reversed.
 If there was a directed edge A → B in the original graph, it is changed to B → A in the transposed graph.
 Second DFS (Step 3: Find SCCs)
 Perform DFS on the transposed graph, processing nodes in the order stored in the stack (from Step 1).
-Every new DFS call represents a new SCC, as nodes visited in one DFS belong to the same strongly connected component.
+Every new DFS call represents a new SCC, as nodes visited in one DFS belong to the same strongly connected
+ component.
 Time Complexity Analysis
 
 First DFS Traversal: 
