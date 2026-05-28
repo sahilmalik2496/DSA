@@ -1,4 +1,4 @@
-package binarySearch.v2;
+package binarySearch;
 
 public class ShippingPackgeDdays {
     /*
