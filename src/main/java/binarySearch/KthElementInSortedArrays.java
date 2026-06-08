@@ -20,7 +20,7 @@ public class KthElementInSortedArrays {
          elements.Even if you take all of arr2, you still need $10 - 3 = 7$ more elements.Therefore,
          you must take at least 7 elements from arr1.low becomes Math.max(0, 7), which is 7.
          */
-        int low = Math.max(0, k - m);
+        int low = Math.max(0, k - n);
         /*
         This handles the maximum number of elements you can possibly take from arr1.Why k? You only need
         $k$ elements in total. It's impossible (and useless) to take more than $k$ elements from arr1.Why n?
@@ -28,16 +28,26 @@ public class KthElementInSortedArrays {
          only has $n = 5$ elements.Even though you need 10, you can't take more than 5 from arr1.high becomes
           Math.min(10, 5), which is 5
          */
-        int high = Math.min(k, n);
+        int high = Math.min(k, m);
 
         while (low <= high) {
+            /*
+            `int cut2 = k - cut1;`
+
+            - `cut1` is the number of elements we choose to take from `arr1` in the current binary-search trial.
+            - `cut2` is computed so the total taken from both arrays equals `k` (i.e., `cut1 + cut2 == k`).
+             Example: if `k = 5` and `cut1 = 2`, then `cut2 = 3` (take 2 from `arr1` and 3 from `arr2`).
+            - This lets the algorithm partition both arrays: left parts contain the candidate `k` elements and right
+             parts contain the rest. The subsequent checks using `left1`, `left2`, `right1`, `right2` verify whether the partition is valid.
+            - The initial `low`/`high` bounds ensure `cut2` stays within valid limits (`0..n`) so you never index out of range.
+             */
             int cut1 = (low + high) / 2;
             int cut2 = k - cut1;
 
             int left1 = (cut1 == 0) ? Integer.MIN_VALUE : arr1[cut1 - 1];
             int left2 = (cut2 == 0) ? Integer.MIN_VALUE : arr2[cut2 - 1];
-            int right1 = (cut1 == n) ? Integer.MAX_VALUE : arr1[cut1];
-            int right2 = (cut2 == m) ? Integer.MAX_VALUE : arr2[cut2];
+            int right1 = (cut1 == m) ? Integer.MAX_VALUE : arr1[cut1];
+            int right2 = (cut2 == n) ? Integer.MAX_VALUE : arr2[cut2];
 
             if (left1 <= right2 && left2 <= right1) {
                 return Math.max(left1, left2);
