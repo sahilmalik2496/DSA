@@ -77,6 +77,11 @@ This is much faster, especially for large matrices (e.g.,
             for (int i = 0; i < rows; i++) {
                 count += countSmallerThanOrEqual(matrix[i], mid, cols);
             }
+            /*
+            if count is less than or equal to half the matrix size, it means mid is too small to be the median, so the
+             binary search moves the lower bound (low = mid + 1) to search for a larger value. Otherwise, mid might be
+             the median or larger, so the upper bound decreases.
+             */
             if (count <= (rows * cols) / 2) {
                 low = mid + 1;
             } else {

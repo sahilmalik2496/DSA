@@ -31,6 +31,13 @@ If mid is odd (0bXXXX1), mid ^ 1 gives mid - 1 (previous even index).
 It allows a clean check of whether mid is part of a correct pair:
 If nums[mid] == nums[mid ^ 1], the unique element is after mid, so we move right (low = mid + 1).
 Otherwise, the unique element is before or at mid, so we move left (high = mid - 1).
+Case A: mid is Evenmid ^ 1 becomes mid + 1.The check becomes: nums[mid] == nums[mid + 1].Meaning: An even index matches the
+next odd index (e.g., index 2 matches index 3). This is the normal pattern for pairs before the unique element. Since
+ everything is normal up to this point, the unique element must be further to the right.👉 Action: low = mid + 1
+ Case B: mid is Oddmid ^ 1 becomes mid - 1.The check becomes: nums[mid] == nums[mid - 1].Meaning: An odd index matches
+  the previous even index (e.g., index 3 matches index 2). This is still the exact same normal pair $(2,3)$! It means we
+   landed on the second element of a normal pair. Everything is still intact before this pair, so the unique element is
+   still to the right.👉 Action: low = mid + 1
   */
 class NonDuplicate {
     public int singleNonDuplicate(int[] nums) {

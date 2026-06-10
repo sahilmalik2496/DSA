@@ -51,6 +51,12 @@ public class MinNumberOfPages {
         }
 
         while (minPages <= totalPages) {
+            /*
+            It's part of a binary search algorithm that searches for the minimum maximum pages. The mid value represents
+            a candidate answer — the maximum number of pages that could be allocated to any single student.
+            In each iteration, the algorithm tests if it's possible to allocate all books to students students such that no student
+            gets more than mid pages. Based on the result, the search range narrows by adjusting either minPages or totalPages.
+             */
             int mid = (minPages + totalPages) / 2;
             if (isValid(pages, mid, students)) {
                 result = mid;
