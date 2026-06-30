@@ -4,12 +4,26 @@ import java.util.HashSet;
 import java.util.Set;
 
 /*
-Given two strings text1 and text2, return the length of their longest common subsequence. If there is no common subsequence, return 0.
+Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
 
-A subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters.
+You must write an algorithm that runs in O(n) time.
 
-For example, "ace" is a subsequence of "abcde".
-A common subsequence of two strings is a subsequence that is common to both strings.
+
+
+Example 1:
+
+Input: nums = [100,4,200,1,3,2]
+Output: 4
+Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
+Example 2:
+
+Input: nums = [0,3,7,2,5,8,4,6,0,1]
+Output: 9
+Example 3:
+
+Input: nums = [1,0,1,2]
+Output: 3
+
 
 https://leetcode.com/problems/longest-consecutive-sequence/description/
  */

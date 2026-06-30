@@ -11,6 +11,24 @@ There are n services numbered from 1 to n in a system, and there are m requests 
   Find the minimum time to process all the requests by allocating each
 request to a service.
 
+This algorithm solves a load balancing or task scheduling problem using Binary Search on Answer.
+
+The goal is to find the minimum time required to process all service requests under specific system constraints.
+Based on the logic in isPossible, the core constraint is that a server can process its own type of request at a normal rate
+ (1 request per 1 unit of time), but taking on "overflow" or leftover requests from other services takes twice as long
+ (2 units of time per request, hence the / 2).
+
+Here is a step-by-step breakdown of how the entire algorithm works.
+
+1. The Strategy: Binary Search on Answer
+Instead of trying to calculate the minimum time directly using complex math, the algorithm flips the problem on its head.
+It asks: "If I give you X amount of time, is it possible to finish all the requests?"
+
+If X time is enough (isPossible returns true), we save X as a potential answer and try to see if we can do it even faster
+ by searching the left half (right = mid - 1).
+
+If X time is not enough, we need more time, so we search the right half (left = mid + 1).
+
 Given the sample input in `main`:
 
 - `n = 3` (services)
